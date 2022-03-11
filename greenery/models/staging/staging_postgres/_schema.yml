@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_postgres__addresses
+    description: Contains user and order address information
+    columns:
+      - name: address
+        tests:
+          - not_null
+ #         - unique 
