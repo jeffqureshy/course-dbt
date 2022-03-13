@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+
+  - name: postgres # name of the source 
+    schema: public # this is the schema our raw data lives in
+    database: dbt # this is the name of our database
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables:
+      - name: users 
+        loaded_at_field: created_at
+        description: >
+          Contains information about each user
+
+      - name: orders
+        loaded_at_field: created_at
+        description: >
+          Contains information about each order
+
+      - name: products
+        description: >
+          Contains information about each product
+
+      - name: order_items
+        description: >
+          Contains the quantity of each ordered product     
+
+      - name: promos
+        description: >
+          Contains information about each sales promotion
+
+      - name: events
+        loaded_at_field: created_at
+        description: >
+          Contains information about each user event
+
+      - name: addresses
+        description: >
+          Contains information about each user address
