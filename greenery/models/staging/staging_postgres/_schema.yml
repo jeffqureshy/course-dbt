@@ -5,6 +5,85 @@ models:
     description: Contains user and order address information
     columns:
       - name: address
+        description: The first few lines of the address
         tests:
           - not_null
- #         - unique 
+      - name: address_id
+        description: UUID for each unique address on platform
+        tests:
+          - not_null
+          - unique
+  
+  - name: stg_postgres__events
+    description: Contains user events information
+    columns:
+      - name: event_id
+        description: UUID of each unique event on the platform
+        tests: 
+          - not_null
+          - unique
+      - name: session_id
+        description: UUID of each browsing session on the platform which can contain many events
+        tests:
+          - not_null
+
+  - name: stg_postgres__order_items
+    description: Contains information on the items ordered
+    columns:
+      - name: order_id
+        description: OrderId of this order
+        tests:
+          - not_null
+      - name: product_id
+        description: ProductId of a single item in this order
+        tests:
+          - not_null
+
+  - name: stg_postgres__orders
+    description: Contains information on orders
+    columns:
+      - name: order_id
+        description: UUID for each unique order on platform
+        tests:
+          - not_null
+          - unique
+      - name: user_id
+        descriptions: UserId of the user that placed this order
+        tests:
+          - not_null
+      - name: address_id
+        descriptions: Delivery address for this order
+        tests:
+          - not_null
+
+  - name: stg_postgres__products
+    description: Contains information on products
+    columns:
+      - name: product_id
+        descriptions: UUID for each unique product on platform
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_postgres__promos
+    description: Contains information on sales promotions
+    columns:
+      - name: promo_id
+        description: Each unique promocode on platform
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_postgres__users
+    description: Contains information on users
+    columns:
+      - name: user_id
+        description: UUID for each unique user on platform
+        tests:
+          - not_null
+          - unique
+      - name: address_id
+        description: default delivery address for the user
+        tests:
+          - not_null
+          - unique
