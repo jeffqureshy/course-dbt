@@ -86,4 +86,3 @@ models:
         description: default delivery address for the user
         tests:
           - not_null
-          - unique
