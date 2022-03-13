@@ -10,13 +10,13 @@
 | How many users have only made one purchase? Two purchases? Three+ purchases? | 1 = 25; 2 = 28; 3+ = 71 |
 
 
-## SQL Code
+## Q&A SQL
 ```sql
 with user_count as 
 (   -- How many users do we have?
     -- 130
     select count(user_id)
-    from dbt_jeff_q.stg_postgres__users
+    from "stg_postgres__users"
 )
 , order_checkout_events as 
 (   

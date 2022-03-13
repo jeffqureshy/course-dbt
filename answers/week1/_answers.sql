@@ -1,8 +1,8 @@
 with user_count as 
 (   -- How many users do we have?
     -- 130
-    select count(user_id)
-    from dbt_jeff_q.stg_postgres__users
+    select count(user_id) as user_count
+    from "stg_postgres__users"
 )
 , order_checkout_events as 
 (   
@@ -87,5 +87,5 @@ with user_count as
     group by order_count_grouping
     order by order_count_grouping
 )
-select * from user_count_by_grouping
+select * from user_count
 limit 100
