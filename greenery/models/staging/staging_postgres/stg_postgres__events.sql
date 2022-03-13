@@ -11,6 +11,7 @@ with  base as (
             ,  event_type
             ,  order_id
             ,  product_id
+            ,  date_trunc( 'hour', created_at ) as created_at_hour
         from base
     )
 select * from final
