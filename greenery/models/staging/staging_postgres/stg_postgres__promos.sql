@@ -5,7 +5,7 @@ with  base as (
     , final as (
         select promo_id
             ,  discount
-            ,  status
+            ,  status as promo_status
         from base
     )
 select * from final
