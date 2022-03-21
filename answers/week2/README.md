@@ -22,4 +22,4 @@ SELECT  sum( is_repeat_customer::int) as repeat_user_count
 from fact_user_order_agg
 ```
 
-![DBT DAG(dbt-dag.png)
+![DBT DAG(./dbt-dag.png)
