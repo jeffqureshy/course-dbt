@@ -10,6 +10,7 @@ select  event_id
     ,   page_url
     ,   created_at
     ,   created_at_hour
+    ,   created_at_day
     ,   event_type
     ,   order_id
     ,   product_id

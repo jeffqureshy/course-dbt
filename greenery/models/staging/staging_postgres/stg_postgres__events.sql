@@ -12,6 +12,7 @@ with  base as (
             ,  order_id
             ,  product_id
             ,  date_trunc( 'hour', created_at ) as created_at_hour
+            ,  date_trunc( 'day', created_at ) as created_at_day
         from base
     )
 select * from final
