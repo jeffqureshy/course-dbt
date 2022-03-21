@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fact_users_orders
+    description: Summary of user order information
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null

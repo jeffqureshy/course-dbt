@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: fact_product_events
+    description: Summary of product event by day
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+
+  - name: fact_user_sessions
+    description: Summary of user sessions
+    columns:
+      - name: session_id
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        tests:
+          - not_null

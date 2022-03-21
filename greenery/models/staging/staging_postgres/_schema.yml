@@ -104,7 +104,7 @@ models:
         tests:
           - not_null
           - references:
-              to: ref('stg_postgres__addresses')
+              to: ref('stg_postgres__adresses')
               field: address_id
       - name: created_at
         description: Timestamp when the order was created
@@ -124,7 +124,7 @@ models:
         description: Estimated date of delivery
       - name: delivered_at
         description: Actual timestamp of delivery
-      - name: status
+      - name: order_status
         description: Status of order
         tests:
           - accepted_values:
@@ -157,7 +157,7 @@ models:
           - unique
       - name: discount
         description: Absolute dollar amount that is given off with the code
-      - name: status
+      - name: promo_status
         description: Is the promo code active or disabled
         tests:
           - accepted_values:
@@ -192,5 +192,5 @@ models:
         tests:
           - not_null
           - references:
-              to: ref('stg_postgres__addresses')
+              to: ref('stg_postgres__adresses')
               field: address_id
