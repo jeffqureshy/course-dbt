@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: fact_users_orders
+  - name: fact_user_orders
     description: Summary of user order information
     columns:
       - name: user_id
