@@ -4,8 +4,6 @@
     )
 }}
 
-{% set event_types = ["page_view", "checkout", "add_to_cart", "package_shipped"] %}
-
 with fact_events as (
     select * from {{ ref('fact_events')}}
 )
@@ -28,7 +26,7 @@ select i.session_id
     ,   u.first_name
     ,   u.last_name
     ,   u.email
-     {% for event_type in event_types %}
+    {% for event_type in get_event_types() %}
     ,   {{event_type}}_count
     {% endfor %}
    ,    session_length.first_created_at as first_session_at

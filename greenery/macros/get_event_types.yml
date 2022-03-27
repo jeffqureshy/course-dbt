@@ -1,0 +1,8 @@
+version: 2
+
+macros:
+  - name: get_event_types
+    description: >
+      Returns a dict of event types
+    docs:
+      show: true
