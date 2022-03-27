@@ -1,12 +1,12 @@
 
-
+-- What is our overall conversion rate?
 Select round(
           (count(distinct case when checkout_count > 0 then session_id else null end)::numeric 
             / count(distinct session_id)::numeric) * 100, 
            2) as conversion_rate
 from dbt_jeff_q.fact_user_sessions
 
-
+-- What is our conversion rate by product?
 select product_id
       , product_name
       , sum(checkout_count) as checkout_count
