@@ -1,0 +1,4 @@
+step_order,step,count,lag,drop_off
+1,Page View,578,,
+2,Add To Cart,467,578,0.19
+3,Checkout,361,467,0.23
